@@ -1,6 +1,13 @@
 /* eslint-disable react/prop-types */
 import myImage from "../assets/fi_10629607.svg";
 const Card = ({ singleCard }) => {
+  if (!singleCard || Object.keys(singleCard).length === 0) {
+    return (
+      <div className="card  bg-base-100">
+        <p>Data is missing</p>
+      </div>
+    );
+  }
   const { thumbnail, title, others, authors } = singleCard;
 
   return (
